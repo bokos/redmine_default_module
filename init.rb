@@ -6,7 +6,7 @@ Redmine::Plugin.register :default_module do
   author 'Nazar Hussain'
   description 'Choose default module for redmine projects'
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
+  url 'https://github.com/nazarhussain/redmine_default_module'
   author_url 'http://microgigz.com'
 
   unless ProjectCustomField.exists?(:name => 'Project Default Module')

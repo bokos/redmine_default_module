@@ -1,3 +1,5 @@
-= default_module
+= Redmine Default Module
 
-Description goes here
+A simple plugin which help to specify default page (module) for a project.
+
+After installing plugin go to project settings and choose the pages from drop down for "Project Default Module" field.
