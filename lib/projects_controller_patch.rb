@@ -2,8 +2,8 @@ module DefaultModule
   module ProjectsControllerPatch
     def self.included(base)
       base.class_eval do
-        before_filter :check_for_default_module, only: [:show]
-        before_filter :update_active_modules, only: [:settings]
+        before_action :check_for_default_module, only: [:show]
+        before_action :update_active_modules, only: [:settings]
 
         def check_for_default_module
           @project.custom_field_values.each do |field|
