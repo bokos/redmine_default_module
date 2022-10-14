@@ -1,6 +1,3 @@
-require 'default_module_hooks'
-require 'projects_controller_patch'
-
 Redmine::Plugin.register :default_module do
   name 'Default Module'
   author 'Nazar Hussain'
@@ -31,17 +28,5 @@ Redmine::Plugin.register :default_module do
     )
   end
 
-  # Here I have support for Redmine 1.x by falling back on Rails 2.x implementation.
-  if Gem::Version.new("3.0") > Gem::Version.new(Rails.version) then
-    Dispatcher.to_prepare do
-      # This tells the Redmine version's controller to include the module from the file above.
-      ProjectsController.send(:include, DefaultModule::ProjectsControllerPatch)
-    end
-  else
-    # Rails 3.0 implementation.
-    Rails.configuration.to_prepare do
-      # This tells the Redmine version's controller to include the module from the file above.
-      ProjectsController.send(:include, DefaultModule::ProjectsControllerPatch)
-    end
-  end
+  ProjectsController.include ProjectsControllerPatch
 end
