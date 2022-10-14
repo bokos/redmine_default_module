@@ -6,7 +6,7 @@ module ProjectsControllerPatch
 
       def check_for_default_module
         @project.custom_field_values.each do |field|
-          params[:jump] = field if field.custom_field.name == 'Project Default Module' and field != ''
+          params[:jump] = field if field.custom_field.name == 'Project Default Module' and field != '' && params[:jump]
         end
       end
 
