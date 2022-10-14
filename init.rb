@@ -1,4 +1,4 @@
-Redmine::Plugin.register :default_module do
+Redmine::Plugin.register :redmine_default_module do
   name 'Default Module'
   author 'Nazar Hussain'
   description 'Choose default module for redmine projects'
